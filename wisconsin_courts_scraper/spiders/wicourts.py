@@ -12,7 +12,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
-datesFile = "/Users/vikas/builderspace/wisconsin_courts_scraperV2/input_date.csv"
 
 class WicourtsSpider(scrapy.Spider):
     name = 'wicourts'
@@ -107,7 +106,7 @@ class WicourtsSpider(scrapy.Spider):
                 yield item
 
     def read_csv(self):
-        with open(datesFile, "r", encoding='Utf-8-sig') as outfile:
+        with open('../input_date.csv', "r", encoding='Utf-8-sig') as outfile:
             return list(csv.DictReader(outfile))
             # yield scrapy.Request(url=case_url.format(case_no, county_no),
             #                      headers=self.headers, callback=self.parse_case, method="POST",

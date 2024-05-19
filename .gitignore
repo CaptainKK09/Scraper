@@ -1,2 +1,5 @@
 venv/
 myenv/
+__pycache__/
+wisconsin_courts_scraper/__pycache__/settings.cpython-311.pyc
+wisconsin_courts_scraper/spiders/__pycache__/wicourts.cpython-311.pyc

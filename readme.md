@@ -58,7 +58,7 @@ pip install scrapy-zyte-api
 pip install zyte-api
 pip install --upgrade pip
 
-5 - The start and the end dates are captured in the input_date.csv. You might need to specify the path where the file is on your setup. Please specify this on line #15 on wicourts.py
+5 - The start and the end dates (MM-DD-YYYY) are captured in the input_date.csv. You might need to specify the path where the file is on your setup. Please specify this on line #15 on wicourts.py
 
 *****************Mac******************
 

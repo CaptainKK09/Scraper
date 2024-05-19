@@ -25,6 +25,7 @@ DOWNLOADER_MIDDLEWARES = {
 REQUEST_FINGERPRINTER_CLASS = "scrapy_zyte_api.ScrapyZyteAPIRequestFingerprinter"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 ZYTE_API_KEY = "8b358cf1aaaf4f2f996e694d02770f56"
+#ZYTE_API_KEY = "434d18d447234edf8b9f669e719b8a56" #This is from Vikas's acount DO NOT USE
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
