@@ -58,11 +58,11 @@ pip install scrapy-zyte-api
 pip install zyte-api
 pip install --upgrade pip
 
-5 - The start and the end dates are captured in the input_date.csv. 
+5 - The start and the end dates are captured in the input_date.csv. You might need to specify the path where the file is on your setup. Please specify this on line #
 
 *****************Mac******************
 
-in the terminal you should be in project where scrapy.cfg file presents, so write the command: scrapy crawl wicourts
+in the terminal you should be in project where scrapy.cfg file presents, so write the command: scrapy crawl wicourts. This will start the scrapper
 
 Once running you will likley see the Captcha Challange on the screen that you will need to manually solve for the first time, the script will run automatically for that session. The demo.mp4 shows a recording on how to bypass the Captcha
 
@@ -77,9 +77,5 @@ if not in windows please run the scraper using terminal command make sure you ar
 
 
 scrapy crawl wicourts
-
-
-
-thanks
 
 
