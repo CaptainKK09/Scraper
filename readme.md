@@ -3,7 +3,7 @@
 
 Go to browser past the link to download python3.7
 
-1 - https://www.python.org/ftp/python/3.7.7/python-3.7.7-amd64.exe(windows)
+1 - https://www.python.org/ftp/python/3.7.7/python-3.7.7-amd64.exe (windows)
 download it and double click when it open there would be an option
 
 add path 
@@ -11,7 +11,7 @@ add path
 please select add path compulsory.
 
 
-2 - https://www.python.org/ftp/python/3.7.0/python-3.7.0-macosx10.9.pkg(MAC OS)
+2 - https://www.python.org/ftp/python/3.7.0/python-3.7.0-macosx10.9.pkg (MAC OS)
      2.1 - for macbook sometimes in old macbook versions python 2.7 is installed if you have new macbook and python 3.7 installed as default donot proceed with next steps go straight to step 4, which is quite dificult to uninstall,so we don't need to unintall. 
      
      2.2 - when you installed python 3.7, check it by writing command : python3 --version
@@ -54,12 +54,12 @@ now after installation please open the terminal/cmd
 
 4 - write following commands one by one.
 
-pip install scrapy
-pip install scrapy-zyte-api
-pip install zyte-api
-pip install --upgrade pip
-pip install selenium
-pip install webdriver-manager
+1. pip3 install scrapy
+2. pip3 install scrapy-zyte-api
+3. pip3 install zyte-api
+4. pip3 install --upgrade pip
+5. pip3 install selenium
+6. pip3 install webdriver-manager
 
 5 - The start and the end dates (MM-DD-YYYY) are captured in the input_date.csv. You might need to specify the path where the file is on your setup. Please specify this on line #15 on wicourts.py
 
