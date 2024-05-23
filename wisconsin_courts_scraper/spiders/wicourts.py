@@ -3,6 +3,7 @@ import json
 import os
 import time
 from copy import deepcopy
+from datetime import datetime, timedelta
 
 import scrapy
 from scrapy import Selector
@@ -11,6 +12,8 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class WicourtsSpider(scrapy.Spider):
@@ -60,10 +63,22 @@ class WicourtsSpider(scrapy.Spider):
 
     def start_requests(self):
         input_records = self.read_csv()
+        print("Start input_records ", input_records)
+
         for input_date in input_records:
             payload = deepcopy(self.payload)
-            payload['offenseDate']['start'] = input_date.get('start_date')
-            payload['offenseDate']['end'] = input_date.get('end_date')
+            start_date_str = input_date.get('start_date')
+            start_date = datetime.strptime(start_date_str, '%m-%d-%Y')
+            end_date = start_date + timedelta(days=1)
+
+            print("Start Date ", start_date)
+            print("End Date ", end_date)
+
+            payload['offenseDate']['start'] = start_date.strftime('%m-%d-%Y')
+            payload['offenseDate']['end'] = end_date.strftime('%m-%d-%Y')
+
+#            payload['offenseDate']['start'] = input_date.get('start_date')
+#            payload['offenseDate']['end'] = input_date.get('end_date')
             yield scrapy.Request(url=self.url, headers=self.headers, callback=self.parse,
                                  body=json.dumps(payload), method="POST")
 
@@ -76,10 +91,13 @@ class WicourtsSpider(scrapy.Spider):
             case_no = case.get('caseNo')
             case_url = "https://wcca.wicourts.gov/caseDetail.html?caseNo={}&countyNo={}&index=0&isAdvanced=true"
             self.driver.get(case_url.format(case_no, county_no))
+            # Replace time.sleep(5) with:
+#            WebDriverWait(self.driver, 30).until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'span.link[role="link"]')))
+
             time.sleep(5)
             try:
                 self.driver.find_element(By.CSS_SELECTOR, 'span.link[role="link"]').click()
-                time.sleep(3)
+#                time.sleep(3)
                 input('Press Enter When Done: ')
 
             except Exception as e:

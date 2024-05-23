@@ -1,4 +1,5 @@
-Extract the project,
+1. Unzip the project folder
+2. Install prerequisites
 
 Go to browser past the link to download python3.7
 
@@ -57,6 +58,8 @@ pip install scrapy
 pip install scrapy-zyte-api
 pip install zyte-api
 pip install --upgrade pip
+pip install selenium
+pip install webdriver-manager
 
 5 - The start and the end dates (MM-DD-YYYY) are captured in the input_date.csv. You might need to specify the path where the file is on your setup. Please specify this on line #15 on wicourts.py
 
